@@ -118,6 +118,7 @@ with matrix_tab:
 							 1, max_tuple_len, 1, key='matrix_tab_n' )
 		st.write( '(Scroll down to see full table.)' )
 		df = tall_frequency_table( n )
+		df['Frequency'] = df['Frequency'].astype( float ) # for Streamlit Cloud
 		st.dataframe(
 			df,
 			use_container_width=True,
